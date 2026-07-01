@@ -1,0 +1,18 @@
+// Last updated: 7/2/2026, 2:48:40 AM
+/**
+ * @param {Function} fn
+ * @return {Array}
+ */
+Array.prototype.groupBy = function(fn) {
+    const ans = {}
+    for(let e of this){
+        const key = fn((e))
+        ans[key] ||=[]
+        ans[key].push(e)
+    }
+    return ans
+};
+
+/**
+ * [1,2,3].groupBy(String) // {"1":[1],"2":[2],"3":[3]}
+ */
